@@ -1,3 +1,5 @@
 class Answer < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :question_id, :answers, :user_id
+  serialize :answers
+  belongs_to :question
 end

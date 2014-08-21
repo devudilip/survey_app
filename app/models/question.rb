@@ -3,4 +3,5 @@ class Question < ActiveRecord::Base
   serialize :options
   belongs_to :survey
   belongs_to :custom_field
+  has_many :answers, dependent: :destroy
 end
