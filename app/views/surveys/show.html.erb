@@ -1,0 +1,15 @@
+<div class="page-header">
+  <h1><%= @survey.name %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <% @survey.questions.all.each do |question| %>
+  <dt><strong><%= question.name %>:</strong></dt>
+  <dd><%= question.custom_field.name %></dd>
+  <% end %>
+</dl>
+
+<div class="form-actions">
+  <%= link_to "Back", surveys_path, :class => 'btn'  %>
+  <%= link_to "Create New Question", new_survey_question_path(@survey), :class => 'btn' %>
+</div>

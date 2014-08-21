@@ -1,4 +1,17 @@
 <%= form_for [@survey, @question], :html => { :class => 'form-horizontal question_form' } do |f| %>
+
+<% if @question.errors.any? %>
+<div id="error_explanation">
+  <ul>
+    <% @question.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
 <div class="control-group">
   <%= f.label :name, :class => 'control-label' %>
   <div class="controls">
