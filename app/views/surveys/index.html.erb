@@ -4,17 +4,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th> Survey Name</th>
+      <th> Survey Name </th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% @surveys.each do |survey| %>
     <tr>
-
       <td><%= survey.name %></td>
       <td>
-        <%= link_to "edit", "", :class => 'btn btn-mini' %>
+        <%= link_to "edit", edit_survey_path(survey), :class => 'btn btn-mini' %>
         <%= link_to "Delete", survey, :method => :delete,:confirm =>  'Are you sure?',
         :class => 'btn btn-mini btn-danger' %>
       </td>
