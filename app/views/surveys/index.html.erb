@@ -13,6 +13,7 @@
     <tr>
       <td><%= survey.name %></td>
       <td>
+        <%= link_to "Manage Survey", new_survey_question_path(survey), :class => 'btn btn-mini' %>
         <%= link_to "edit", edit_survey_path(survey), :class => 'btn btn-mini' %>
         <%= link_to "Delete", survey, :method => :delete,:confirm =>  'Are you sure?',
         :class => 'btn btn-mini btn-danger' %>
