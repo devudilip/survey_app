@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140821202420) do
+ActiveRecord::Schema.define(:version => 20140821203316) do
 
   create_table "custom_fields", :force => true do |t|
     t.string   "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20140821202420) do
   create_table "questions", :force => true do |t|
     t.string   "name"
     t.integer  "custom_field_id"
-    t.integer  "survey_name_id"
+    t.integer  "survey_id"
     t.text     "options"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
