@@ -1,1 +1,26 @@
-First
+<div class="page-header">
+  <h1> Survey </h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> Survey Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @surveys.each do |survey| %>
+    <tr>
+
+      <td><%= survey.name %></td>
+      <td>
+        <%= link_to "edit", "", :class => 'btn btn-mini' %>
+        <%= link_to "Delete", survey, :method => :delete,:confirm =>  'Are you sure?',
+        :class => 'btn btn-mini btn-danger' %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New Survey",new_survey_path,:class => 'btn btn-primary' %>
