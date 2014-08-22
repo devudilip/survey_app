@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   validates :user_name, presence: true, :allow_blank => false, :uniqueness => { :case_sensitive => false }
 
+  has_many :answers, dependent: :destroy
 end

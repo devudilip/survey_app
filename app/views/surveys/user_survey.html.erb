@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h3>Survey: <%= @survey.name %></h3>
+  <h3>User: <%= @user.user_name %></h3>
+</div>
+
+<dl class="dl-horizontal">
+  <% @survey_answers.each do |answer| %>
+  <dt><strong><%= answer.question.name %>:</strong></dt>
+  <dd><%= answer.answers.join(' ') %></dd>
+  <% end %>
+</dl>
+
+<div class="form-actions">
+  <%= link_to "Back", survey_questions_path(@survey), :class => 'btn'  %>
+  <%= link_to "Back to surveys", surveys_path, :class => 'btn' %>
+</div>

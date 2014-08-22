@@ -11,7 +11,7 @@ class AnswersController < ApplicationController
     @survey = Survey.find params[:survey_id]
     @answer = @survey.answers.new
     survey =  params[:survey]
-    @answers = params[:survey].collect { |ans| @survey.answers.new(answers: ans.last, user_id: 1, question_id: ans.first) }
+    @answers = params[:survey].collect { |ans| @survey.answers.new(answers: ans.last, user_id: current_user.id, question_id: ans.first) }
     if @answers.all?(&:valid?)
       @answers.each(&:save!)
       flash[:notice] = 'Thanks for taking survey.'

@@ -45,4 +45,10 @@ class SurveysController < ApplicationController
     redirect_to surveys_path
   end
 
+  def user_survey
+    @survey = Survey.find params[:id]
+    @user = User.find params[:user_id]  
+    @survey_answers = @user.answers.where(survey_id: @survey.id)
+  end
+
 end
