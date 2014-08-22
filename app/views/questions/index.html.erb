@@ -13,9 +13,11 @@
     <tr>
       <td><%= question.name %></td>
       <td>
-        <% question.answers.each do |answer| %>
-        <%= answer.answers.join(' ') %> <br />
-        <% end %>
+      <div class="survey-box"> 
+          <% question.answers.each do |answer| %>
+          <%= answer.answers.join(' ') %> <br />
+          <% end %>
+        </div>
       </td>
     </tr>
     <% end %>
