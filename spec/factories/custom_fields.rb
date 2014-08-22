@@ -2,5 +2,6 @@
 
 FactoryGirl.define do
   factory :custom_field do
+    name "Radio Button"
   end
 end
