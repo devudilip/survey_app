@@ -1,3 +1,7 @@
+<div class="page-header">
+	<h1> Survey <%= @survey.name  %></h1>
+</div>
+
 <%= form_for [@survey, @answer] , :html => { :class => 'form-horizontal survey_form' } do |f| %>
 
 <% @survey.questions.each do |question| %>
@@ -6,6 +10,7 @@
 	<div class="controls">
 		<%= get_field_tag(question) %>
 		<%#= f.text_field :name, :class => 'text_field' %>
+		<label id="survey[<%= question.id %>][]-error" class="error" for="survey[<%= question.id %>][]"> </label>
 	</div>
 </div>
 <% end %>

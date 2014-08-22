@@ -4,7 +4,7 @@ module ApplicationHelper
     if question.custom_field.name == "Numeric"
       tag("input", type: 'number', name:  "survey[#{question.id}][]")
     elsif question.custom_field.name == "Essay"
-      tag("input", type: 'text_area', name:  "survey[#{question.id}][]")
+      tag("input", type: 'text_area', name:  "survey[#{question.id}][]", class: "survey_area")
     elsif question.custom_field.name == "Radio Button"
       radio = ''
       options = question.options.split("\n")
