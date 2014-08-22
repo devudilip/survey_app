@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-
+load_and_authorize_resource
   def index
     @survey = Survey.find params[:survey_id]
     @questions = @survey.questions

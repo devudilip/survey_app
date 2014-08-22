@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
   before_filter :authenticate_user!
+  load_and_authorize_resource
   def new
     @survey = Survey.find params[:survey_id]
     @answer = @survey.answers.new

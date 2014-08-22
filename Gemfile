@@ -42,3 +42,4 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem 'rspec-rails', '~> 3.0.0'
 gem "factory_girl_rails", "~> 4.0"
+gem "cancan"
