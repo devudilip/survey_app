@@ -4,6 +4,7 @@ SurveyApp::Application.routes.draw do
 
   resources :surveys do 
     resources :questions
+    resources :answers
   end
   root :to => "surveys#index"
   # The priority is based upon order of creation:
