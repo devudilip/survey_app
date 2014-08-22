@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-load_and_authorize_resource
+  load_and_authorize_resource
   def index
     @surveys = Survey.all
   end
@@ -41,6 +41,7 @@ load_and_authorize_resource
   def destroy
     @survey = Survey.find params[:id]
     @survey.destroy
+    flash[:error] = 'Survey deleted successfully.'
     redirect_to surveys_path
   end
 
