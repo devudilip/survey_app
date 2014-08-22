@@ -1,8 +1,5 @@
 $( document ).ready( function () {
-
-
 	$('#new_answer').validate({
-		
 		highlight: function(element) {
 			$(element).closest('.control-group').removeClass('success').addClass('error');
 		},
@@ -39,7 +36,6 @@ $( document ).ready( function () {
 			}
 		});
 	});
-	
 
 	$('.survey_date').datepicker()
 
