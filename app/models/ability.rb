@@ -10,10 +10,8 @@ class Ability
     elsif user.current_sign_in_at
         can :manage, Answer
         can :index, Survey
-        can :index, Question
     else
         can :index, Survey
-        can :index, Question
     end
     #
     # The first argument to `can` is the action you are giving the user 
