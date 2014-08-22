@@ -13,11 +13,11 @@
     <tr>
       <td><%= survey.name %></td>
       <td>
-        <%= link_to "Survey Results", survey_questions_path(survey), :class => 'btn btn-mini' %>
         <% if can? :new, Answer %>
         <%= link_to "Take Survey" , new_survey_answer_path(survey), :class => 'btn btn-mini' %> 
         <% end %>
         <% if can? :manage, survey %>
+        <%= link_to "Survey Results", survey_questions_path(survey), :class => 'btn btn-mini' %>
         <%= link_to "Manage Survey", survey_path(survey), :class => 'btn btn-mini' %>
         <%= link_to "edit", edit_survey_path(survey), :class => 'btn btn-mini' %>
         <%= link_to "Delete", survey, :method => :delete,:confirm =>  'Are you sure?',
