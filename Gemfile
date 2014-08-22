@@ -35,11 +35,15 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
+group :test, :development do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem "factory_girl_rails", "~> 4.0"
+  gem "shoulda-matchers"
+end 
+
 gem 'debugger'
 gem 'devise'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
-gem 'rspec-rails', '~> 3.0.0'
-gem "factory_girl_rails", "~> 4.0"
 gem "cancan"
