@@ -10,7 +10,7 @@ class Question < ActiveRecord::Base
 
   def options_presence
     if (custom_field.name == "Radio Button" or custom_field.name == "Check Box") && options.blank?
-      errors.add(:options, "options can't be blank for this type")
+      errors.add(:options, ":Can't be blank for type #{custom_field.name}")
     end
   end
   
