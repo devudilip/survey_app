@@ -48,7 +48,7 @@ class SurveysController < ApplicationController
   def user_survey
     @survey = Survey.find params[:id]
     @user = User.find params[:user_id]  
-    @survey_answers = @user.answers.where(survey_id: @survey.id)
+    @survey_answers = @user.answers.survey_answers(@survey)
   end
 
 end

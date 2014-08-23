@@ -3,4 +3,6 @@ class Answer < ActiveRecord::Base
   serialize :answers
   belongs_to :question
   belongs_to :user
+
+  scope :survey_answers, lambda { |survey| where(survey_id: survey.id) }
 end
