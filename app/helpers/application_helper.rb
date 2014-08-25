@@ -11,7 +11,7 @@ module ApplicationHelper
       options.collect{ |text| radio += tag("input", type: 'radio', name:  "survey[#{question.id}][]", value: text, class: "survey_radio required")  + text }
       return raw(radio)
     elsif question.custom_field.name == "Date"
-      tag("input", type: 'date', name:  "survey[#{question.id}][]", class: "survey_date required", autocomplete: "off")
+      tag("input", type: 'text', name:  "survey[#{question.id}][]", class: "survey_date required", autocomplete: "off")
     elsif  question.custom_field.name == "Check Box" 
       checkbox = ''
       options = question.options.split("\n")
