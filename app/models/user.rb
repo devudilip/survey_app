@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   validates :user_name, presence: true, :allow_blank => false, :uniqueness => { :case_sensitive => false }
 
   has_many :answers, dependent: :destroy
+  has_many :survey_users
+  has_many :surveys, through: :survey_users
 end
