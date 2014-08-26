@@ -1,22 +1,22 @@
 <div class="page-header">
   <h1> Survey Results</h1>
-  (Click on answers to navigate to user survey responses)
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th> Survey Name </th>
+      <th> Name </th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <% @questions.each do |question| %>
+    <% @users.each do |user| %>
     <tr>
-      <td><%= question.name %></td>
+      <td><%= user.user_name %></td>
       <td>
         <div class="survey-box"> 
-          <% question.answers.each do |answer| %>
-          <%= link_to answer.answers.join(' '), user_survey_survey_path(@survey,user_id: answer.user_id) %> 
+          <% user.answers.each do |answer| %>
+          <%=  answer.question.name %>
+          <%=  get_formated_answer answer  %> 
           <br />
           <% end %>
         </div>

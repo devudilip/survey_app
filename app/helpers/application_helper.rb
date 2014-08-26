@@ -20,4 +20,13 @@ module ApplicationHelper
     end
   end
 
+
+  def get_formated_answer answer
+    if answer.question.custom_field.name == "Check Box"
+      answer.answers.join(',')
+    else
+      answer.answers.join(' ')
+    end
+  end
+
 end
