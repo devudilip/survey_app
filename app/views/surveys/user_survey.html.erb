@@ -6,7 +6,7 @@
 <dl class="dl-horizontal">
   <% @survey_answers.each do |answer| %>
   <dt><strong><%= answer.question.name %>:</strong></dt>
-  <dd><%= answer.answers.join(' ') %></dd>
+  <dd><%= get_formated_answer answer %></dd>
   <% end %>
 </dl>
 
