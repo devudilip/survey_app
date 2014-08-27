@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1> Survey Results</h1>
+  <h2> <%= @survey.name  %>: Users List</h2>
 </div>
 <% if @users.blank? %>
 There are no responses for survey <%= @survey.name  %> <br />
@@ -20,6 +20,8 @@ There are no responses for survey <%= @survey.name  %> <br />
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @users %>
+<div class="apple_pagination">
+  <%= will_paginate @users %>
+</div>
 <% end %>
 <%= link_to "Back To Surveys",surveys_path,:class => 'btn btn-primary' %>
