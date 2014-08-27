@@ -9,20 +9,24 @@
 <body>
 
 
- <header class="navbar">
+ <div class="navbar navbar-inverse navbar-fixed-top index">
   <div class="navbar-inner">
-    <a class="brand" href="/">Survey</a>
-    <div style="float:right;"> 
-      <% if user_signed_in? %>
-      <%= link_to "Sign Out", destroy_user_session_path , method: :delete %>
-      <% else %>
-      <%= link_to "Sign In", new_user_session_path %>
-      <% end %>
+    <div class="container">
+      <a class="brand" href="/">Survey</a>
+      <div style="nav-collapse collapse"> 
+        <ul class="nav pull-right">
+          <% if user_signed_in? %>
+          <li> <%= link_to "Sign Out", destroy_user_session_path , method: :delete %> </li>
+          <% else %>
+          <li>  <%= link_to "Sign In", new_user_session_path %> </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</header>
+</div>
 
-<div class="container" >
+<div class="container main-container-survey" >
   <div class="row">
     <%= bootstrap_flash %>
     <%= yield %>
@@ -30,6 +34,7 @@
 </div> 
 
 <footer id="footer">
+  <a id="gototop" class="gototop" href="#"><i class="icon-angle-up"></i></a>
 </footer>
 
 </body>
