@@ -1,7 +1,14 @@
 <div class="page-header">
-  <h1> Survey </h1>
-</div>
-<table class="table table-striped">
+  <h2> Survey List 
+    <div class="pull-right"> 
+     <% if can? :manage, Survey %>
+     <%= link_to "New Survey",new_survey_path,:class => 'btn btn-primary-green' %>
+     <% end %>
+   </h2> </div>
+
+ </div>
+
+ <table class="table table-striped">
   <thead>
     <tr>
       <th> Survey Name </th>
@@ -12,22 +19,19 @@
     <% @surveys.each do |survey| %>
     <tr>
       <td><%= survey.name %></td>
-      <td>
+      <td style="text-align: right;">
         <% if can? :new, Answer %>
-        <%= link_to "Take Survey" , new_survey_answer_path(survey), :class => 'btn btn-mini' %> 
+        <%= link_to "Take Survey" , new_survey_answer_path(survey), :class => 'btn btn-primary-green' %> 
         <% end %>
         <% if can? :manage, survey %>
-        <%= link_to "Survey Results", survey_questions_path(survey), :class => 'btn btn-mini' %>
-        <%= link_to "Manage Survey", survey_path(survey), :class => 'btn btn-mini' %>
-        <%= link_to "edit", edit_survey_path(survey), :class => 'btn btn-mini' %>
+        <%= link_to "Survey Results", survey_questions_path(survey), :class => 'btn btn-primary' %>
+        <%= link_to "Manage Survey", survey_path(survey), :class => 'btn btn-primary' %>
+        <%= link_to "edit", edit_survey_path(survey), :class => 'btn btn-primary' %>
         <%= link_to "Delete", survey, :method => :delete,:confirm =>  'Are you sure?',
-        :class => 'btn btn-mini btn-danger' %>
+        :class => 'btn btn-danger' %>
         <% end %>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<% if can? :manage, Survey %>
-<%= link_to "New Survey",new_survey_path,:class => 'btn btn-primary' %>
-<% end %>

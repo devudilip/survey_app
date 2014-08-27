@@ -48,3 +48,4 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem "cancan"
 gem 'will_paginate', '~> 3.0'
+gem "font-awesome-rails"

@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
  *= require_tree .
  */
 
@@ -30,4 +31,15 @@
  	background: url("/assets/bg-pattern.png") repeat;
  }
 
- 
+
+
+ #footer #gototop {
+ 	background: none repeat scroll 0 0 #1F3E46;	
+ 	color: #999999;
+ 	display: inline-block;
+ 	font-size: 24px;
+ 	height: 40px;
+ 	line-height: 40px;
+ 	text-align: center;
+ 	width: 40px;
+ }
