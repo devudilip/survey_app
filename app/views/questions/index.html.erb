@@ -1,6 +1,9 @@
 <div class="page-header">
   <h1> Survey Results</h1>
 </div>
+<% if @users.blank? %>
+There are no responses for survey <%= @survey.name  %> <br />
+<% else %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -18,4 +21,5 @@
   </tbody>
 </table>
 <%= will_paginate @users %>
+<% end %>
 <%= link_to "Back To Surveys",surveys_path,:class => 'btn btn-primary' %>

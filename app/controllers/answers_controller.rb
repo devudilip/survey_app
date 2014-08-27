@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @survey = Survey.find params[:survey_id]
+    @survey = Survey.includes(:questions).find params[:survey_id]
     @answer = @survey.answers.new
   end
 

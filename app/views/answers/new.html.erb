@@ -1,7 +1,10 @@
 <div class="page-header">
 	<h1> Survey <%= @survey.name  %></h1>
 </div>
-
+<% if  @survey.questions.blank? %>
+There are no questions for survey <%= @survey.name  %> <br />
+<%= link_to "Back",surveys_path, :class => 'btn btn-primary' %>
+<% else %>
 <%= form_for [@survey, @answer] , :html => { :class => 'form-horizontal survey_form' } do |f| %>
 
 <% @survey.questions.each do |question| %>
@@ -9,7 +12,6 @@
 	<%= f.label :name, question.name , :class => 'control-label' %>
 	<div class="controls">
 		<%= get_field_tag(question) %>
-		<%#= f.text_field :name, :class => 'text_field' %>
 		<label id="survey[<%= question.id %>][]-error" class="error" for="survey[<%= question.id %>][]"> </label>
 	</div>
 </div>
@@ -19,4 +21,5 @@
 	<%= f.submit nil, :class => 'btn btn-primary' %>
 	<%= link_to "Cancel",surveys_path, :class => 'btn' %>
 </div>
+<% end %>
 <% end %>
