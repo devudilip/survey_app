@@ -25,3 +25,7 @@
  	max-height: 200px;
  	overflow: auto;
  }
+
+ body {
+ 	background: url("/assets/bg-pattern.png") repeat;
+ }
