@@ -4,26 +4,20 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th> Name </th>
-      <th></th>
+      <th> User Name </th>
+      <th> Email</th>
+      <th> Date </th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
     <tr>
-      <td><%= user.user_name %></td>
-      <td>
-        <div class="survey-box"> 
-          <% user.answers.each do |answer| %>
-          <%=  answer.question.name %>
-          <%=  get_formated_answer answer  %> 
-          <br />
-          <% end %>
-        </div>
-      </td>
+      <td><%= link_to user.user_name, user_survey_survey_path(@survey,user_id: user.id) %></td>
+      <td><%= user.email %></td>
+      <td><%= user.created_at.strftime('%d %b %Y') %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @users %>
 <%= link_to "Back To Surveys",surveys_path,:class => 'btn btn-primary' %>

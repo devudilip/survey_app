@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
     @answers = survey.collect { |ans| @survey.answers.new(answers: ans.last, user_id: current_user.id, question_id: ans.first) }
     if @answers.all?(&:valid?)
       @answers.each(&:save!)
-      flash[:notice] = 'Thanks for taking survey.'
+      flash[:notice] = 'Thank you for taking survey.'
       redirect_to surveys_path
     else
       flash[:error] = 'Please fill all the field.'
