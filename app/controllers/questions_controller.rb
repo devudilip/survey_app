@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   load_and_authorize_resource
   def index
     @survey = Survey.find params[:survey_id]
-    @users = @survey.users.paginate(:page => params[:page], :per_page => 3)#.includes(:answers).where('answers.survey_id = ? ', @survey.id)
+    @users = @survey.users.paginate(:page => params[:page], :per_page => 5)
   end
   
   def new
